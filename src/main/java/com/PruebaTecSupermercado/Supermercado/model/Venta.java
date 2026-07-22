@@ -1,15 +1,14 @@
 package com.PruebaTecSupermercado.Supermercado.model;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter @Setter
 @NoArgsConstructor
@@ -25,4 +24,7 @@ public class Venta {
     // cada venta tiene una sucursal
     @ManyToOne
     private Sucursal sucursal;
+
+    @OneToMany (mappedBy = "venta")
+    private List<DetalleVenta> detalle = new ArrayList<>();
 }
