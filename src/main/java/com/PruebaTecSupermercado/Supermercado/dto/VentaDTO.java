@@ -15,11 +15,12 @@ public class VentaDTO {
     private Long id;
     private LocalDate fecha;
     private String estado;
-    private Double total;
 
     // datos de la sucursal
     private Long idSucursal;
 
     // lista de detalles
     private List<DetalleVentaDTO> detalle;
+
+    private Double total;
 }
